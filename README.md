@@ -1,9 +1,9 @@
 # mockmate
 
 <p align="center">
-  <img src="https://img.shields.io/npm/v/mockmate" />
-  <img src="https://img.shields.io/npm/dw/mockmate" />
-  <img src="https://img.shields.io/github/license/monokkai/mockmate" />
+  <img src="https://img.shields.io/npm/v/mockmate" alt="npm version" />
+  <img src="https://img.shields.io/npm/dw/mockmate" alt="downloads" />
+  <img src="https://img.shields.io/github/license/monokkai/mockmate" alt="license" />
 </p>
 
 Mockmate is a lightweight mock data generator for JavaScript and TypeScript.
@@ -30,7 +30,6 @@ yarn add mockmate
 npm install mockmate
 pnpm add mockmate
 ```
-
 ### Basic Usage
 
 ```ts
@@ -64,7 +63,6 @@ const users = await mockmate({
 ```
 
 ### Error Handling
-
 ```ts
 try {
   await mockmate({ category: "users" });
@@ -75,12 +73,49 @@ try {
 }
 ```
 
-Supported Categories
+### Supported Categories
+
+```
 users
 posts
 comments
 todos
+```
 
+### Running Tests
+Mockmate uses Jest for testing. You can run tests locally with:
+
+```bash
+pnpm add -D jest ts-jest @types/jest
+pnpm jest
+```
+
+Or using npm/yarn:
+
+```
+npm install --save-dev jest ts-jest @types/jest
+npm test
+```
+#### Example test structure:
+
+```ts
+// tests/mockmate.test.ts
+import { mockmate } from "../src";
+
+describe("mockmate", () => {
+  it("should generate an array of users", async () => {
+    const users = await mockmate({ category: "users", quantity: 3 });
+    expect(users).toHaveLength(3);
+    expect(users[0]).toHaveProperty("name");
+  });
+
+  it("should pick only selected fields", async () => {
+    const users = await mockmate({ category: "users", quantity: 1, pick: ["email"] });
+    expect(users[0]).toHaveProperty("email");
+    expect(users[0]).not.toHaveProperty("name");
+  });
+});
+
+```
 ### License
-
 MIT
