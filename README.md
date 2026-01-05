@@ -1,8 +1,8 @@
 # mockmate
 
 <p align="center">
-  <img src="https://img.shields.io/npm/v/mockmate" alt="npm version" />
-  <img src="https://img.shields.io/npm/dw/mockmate" alt="downloads" />
+  <img src="https://img.shields.io/npm/v/@mockmate/mockmate" alt="npm version" />
+  <img src="https://img.shields.io/npm/dw/@mockmate/mockmate" alt="downloads" />
   <img src="https://img.shields.io/github/license/monokkai/mockmate" alt="license" />
   <img src="https://img.shields.io/badge/tests-Jest-blue" alt="Jest tests" />
 </p>
@@ -31,6 +31,7 @@ yarn add mockmate
 npm install mockmate
 pnpm add mockmate
 ```
+
 ### Basic Usage
 
 ```ts
@@ -64,6 +65,7 @@ const users = await mockmate({
 ```
 
 ### Error Handling
+
 ```ts
 try {
   await mockmate({ category: "users" });
@@ -84,6 +86,7 @@ todos
 ```
 
 ### Running Tests
+
 Mockmate uses Jest for testing. You can run tests locally with:
 
 ```bash
@@ -97,6 +100,7 @@ Or using npm/yarn:
 npm install --save-dev jest ts-jest @types/jest
 npm test
 ```
+
 #### Example test structure:
 
 ```ts
@@ -111,12 +115,17 @@ describe("mockmate", () => {
   });
 
   it("should pick only selected fields", async () => {
-    const users = await mockmate({ category: "users", quantity: 1, pick: ["email"] });
+    const users = await mockmate({
+      category: "users",
+      quantity: 1,
+      pick: ["email"],
+    });
     expect(users[0]).toHaveProperty("email");
     expect(users[0]).not.toHaveProperty("name");
   });
 });
-
 ```
+
 ### License
+
 MIT
