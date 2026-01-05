@@ -4,6 +4,7 @@
   <img src="https://img.shields.io/npm/v/mockmate" alt="npm version" />
   <img src="https://img.shields.io/npm/dw/mockmate" alt="downloads" />
   <img src="https://img.shields.io/github/license/monokkai/mockmate" alt="license" />
+  <img src="https://img.shields.io/badge/tests-Jest-blue" alt="Jest tests" />
 </p>
 
 Mockmate is a lightweight mock data generator for JavaScript and TypeScript.
