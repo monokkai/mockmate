@@ -1,12 +1,15 @@
-import { mockmate } from '../index.js'
+import { mockmate } from "../index.js";
 
 async function run() {
     const users = await mockmate({
         category: "posts",
-        quantity: 2
-    })
+        quantity: 2,
+    });
 
-    console.log(users)
+    console.groupCollapsed("Generated users: ");
+    console.table(users);
+    console.groupEnd();
+    console.log(users);
 }
 
-run()
+run();
