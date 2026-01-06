@@ -1,6 +1,6 @@
 {
   "name": "@mockmate/mockmate",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "author": "monokkai",
   "license": "MIT",
   "main": "dist/index.js",
