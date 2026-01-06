@@ -1,5 +1,5 @@
-import { MockmateOptions } from "./types";
-import { fetchData } from "./fetcher";
+import type { MockmateOptions } from "./types.js";
+import { fetchData } from "./fetcher.js";
 
 export async function generate(options: MockmateOptions) {
     const data = await fetchData(options.category)

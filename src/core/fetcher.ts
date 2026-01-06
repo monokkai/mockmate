@@ -1,6 +1,7 @@
-import { SourceFetchError } from "./errors";
-import { DataCategory } from "./types"
-import axios from "axios"
+import type { DataCategory } from "./types.js";
+import { SourceFetchError } from "./errors.js";
+import axios from "axios";
+
 
 const BASE_URL = "https://jsonplaceholder.typicode.com"
 
