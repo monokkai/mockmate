@@ -1,8 +1,7 @@
 import type { DataCategory } from "./types.js";
 import { SourceFetchError } from "./errors.js";
 import axios from "axios";
-
-const BASE_URL = "https://jsonplaceholder.typicode.com";
+import { BASE_URL } from "../utils/config.js";
 
 export async function fetchData(category: DataCategory) {
   try {

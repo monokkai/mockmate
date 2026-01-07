@@ -6,23 +6,12 @@ export async function generate(options: MockmateOptions) {
   let result: any[] = [];
 
   if (options.schema) {
-    result = generateFromSchema(
-      options.schema,
-      options.quantity ?? 1
-    );
-  }
-
-  else if (options.category) {
+    result = generateFromSchema(options.schema, options.quantity ?? 1);
+  } else if (options.category) {
     const data = await fetchData(options.category);
-    result = options.quantity
-      ? data.slice(0, options.quantity)
-      : data;
-  }
-
-  else {
-    throw new Error(
-      'Mockmate: provide either "schema" or "category"'
-    );
+    result = options.quantity ? data.slice(0, options.quantity) : data;
+  } else {
+    throw new Error('Mockmate: provide either "schema" or "category"');
   }
 
   if (options.pick) {
@@ -41,10 +30,7 @@ export async function generate(options: MockmateOptions) {
     result = result.map((item: Record<string, unknown>) => ({
       ...item,
       ...Object.fromEntries(
-        Object.entries(options.extend!).map(([key, fn]) => [
-          key,
-          fn(),
-        ])
+        Object.entries(options.extend!).map(([key, fn]) => [key, fn()])
       ),
     }));
   }
