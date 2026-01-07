@@ -1,4 +1,4 @@
-import type { SchemaDefenititon } from "./types";
+import type { SchemaDefenititon } from "./types.js";
 
 export function generateFromSchema(
   schema: SchemaDefenititon,
