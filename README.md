@@ -64,6 +64,20 @@ const users = await mockmate({
 });
 ```
 
+### Generate Schema
+
+```ts
+const users = await generate({
+  quantity: 3,
+  schema: {
+    id: () => crypto.randomUUID(),
+    username: () => `user_${Math.random().toString(36).slice(2)}`,
+    age: () => Math.floor(Math.random() * 50) + 18,
+    email: () => "test@mail.com",
+  },
+});
+```
+
 ### Error Handling
 
 ```ts
