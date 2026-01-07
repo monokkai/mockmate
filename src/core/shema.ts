@@ -9,7 +9,6 @@ export function generateFromSchema(schema: SchemaDefenititon, quantity: number =
         for (const key in schema) {
             item[key] = schema[key]();
         }
-
         result.push(item)
     }
 
