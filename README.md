@@ -1,6 +1,6 @@
 # mockmate
 
-<p align="center">
+<p>
   <img src="https://img.shields.io/npm/v/@mockmate/mockmate" alt="npm version" />
   <img src="https://img.shields.io/npm/dw/@mockmate/mockmate" alt="downloads" />
   <img src="https://img.shields.io/github/license/monokkai/mockmate" alt="license" />
