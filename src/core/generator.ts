@@ -1,4 +1,4 @@
-import type { DataSource, MockmateOptions } from "./types.js";
+import type { MockmateOptions } from "./types.js";
 import { fetchData } from "./fetcher.js";
 import { generateFromSchema } from "./shema.js";
 
