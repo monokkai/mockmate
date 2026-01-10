@@ -67,11 +67,11 @@ const users = await mockmate({
 ### Different sources
 
 ```ts
-  const users = await mockmate({
-    category: "users",
-    source: "fakestoreapi", // source: "jsonplaceholder"
-    quantity: 2,
-  });
+const users = await mockmate({
+  category: "users",
+  source: "fakestoreapi", // source: "jsonplaceholder"
+  quantity: 2,
+});
 ```
 
 ### Generate Schema

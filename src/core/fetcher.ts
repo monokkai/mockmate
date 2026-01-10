@@ -3,7 +3,10 @@ import { SourceFetchError } from "./errors.js";
 import axios from "axios";
 import { getBaseUrl } from "../utils/config.js";
 
-export async function fetchData(category: DataCategory, source: DataSource = "jsonplaceholder") {
+export async function fetchData(
+  category: DataCategory,
+  source: DataSource = "jsonplaceholder"
+) {
   try {
     const baseUrl = getBaseUrl(source);
     const response = await axios.get(`${baseUrl}/${category}`);
