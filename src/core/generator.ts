@@ -1,4 +1,4 @@
-import type { MockmateOptions } from "./types.js";
+import type { DataSource, MockmateOptions } from "./types.js";
 import { fetchData } from "./fetcher.js";
 import { generateFromSchema } from "./shema.js";
 
@@ -8,7 +8,7 @@ export async function generate(options: MockmateOptions) {
   if (options.schema) {
     result = generateFromSchema(options.schema, options.quantity ?? 1);
   } else if (options.category) {
-    const data = await fetchData(options.category);
+    const data = await fetchData(options.category, options.source);
     result = options.quantity ? data.slice(0, options.quantity) : data;
   } else {
     throw new Error('Mockmate: provide either "schema" or "category"');

@@ -1,11 +1,12 @@
-import type { DataCategory } from "./types.js";
+import type { DataCategory, DataSource } from "./types.js";
 import { SourceFetchError } from "./errors.js";
 import axios from "axios";
-import { BASE_URL } from "../utils/config.js";
+import { getBaseUrl } from "../utils/config.js";
 
-export async function fetchData(category: DataCategory) {
+export async function fetchData(category: DataCategory, source: DataSource = "jsonplaceholder") {
   try {
-    const response = await axios.get(`${BASE_URL}/${category}`);
+    const baseUrl = getBaseUrl(source);
+    const response = await axios.get(`${baseUrl}/${category}`);
     return response.data;
   } catch (error) {
     throw new SourceFetchError(

@@ -1,4 +1,12 @@
-export const BASE_URL = "https://jsonplaceholder.typicode.com";
-// TODO: impleement more data sources. not only jsonplaceholder
-//       such as https://fakestoreapi.com, and etc.
-// and the property source: "jsonplaceholder" | "fakestoreapi" will gitve us that ability.
+import type { DataSource } from "../core/types";
+
+export const SOURCE_URLS: Record<DataSource, string> = {
+    jsonplaceholder: "https://jsonplaceholder.typicode.com",
+    fakestoreapi: "https://fakestoreapi.com"
+};
+
+export const BASE_URL = SOURCE_URLS.jsonplaceholder;
+
+export function getBaseUrl(source: DataSource): string {
+    return SOURCE_URLS[source];
+}
